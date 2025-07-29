@@ -1,3 +1,44 @@
 <div class="container">
-  <h1>{{ title }}</h1>
+  <div class="game-panel">
+    <h1 class="main-title">{{ title }}</h1>
+    <div class="controls">
+      <button
+        class="action-button primary"
+        (click)="onNewGame()"
+        [disabled]="!game || (game && game.started && !game.winner)"
+        aria-label="Start New Game"
+      >
+        New Game
+      </button>
+    </div>
+    <div class="player-info">
+      <span [ngClass]="{'active': game?.playerTurn === 'X'}">
+        X (Player 1)
+      </span>
+      <span [ngClass]="{'active': game?.playerTurn === 'O'}">
+        O (Player 2)
+      </span>
+    </div>
+    <div class="status-message" [ngClass]="{'has-winner': !!game?.winner}">
+      {{ getStatusMessage() }}
+    </div>
+    <div class="board-centerer">
+      <ttt-board
+        [board]="game?.board || [[]]"
+        [disabled]="!!game?.winner"
+        (cellClick)="onCellClick($event)"
+      ></ttt-board>
+    </div>
+    <div class="bottom-controls">
+      <button
+        class="action-button accent"
+        (click)="onReset()"
+        [disabled]="!game || !game.winner"
+        aria-label="Reset Board"
+      >
+        Reset Board
+      </button>
+    </div>
+    <ttt-game-history [history]="history"></ttt-game-history>
+  </div>
 </div>

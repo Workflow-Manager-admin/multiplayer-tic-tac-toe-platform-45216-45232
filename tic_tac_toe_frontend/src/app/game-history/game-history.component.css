@@ -1,0 +1,62 @@
+.history-container {
+  background: #fff;
+  border: 1.5px solid #e0e7ef;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 1px 4px rgba(25, 118, 210, 0.04);
+  margin-top: 1.5rem;
+  max-width: 430px;
+  width: 100%;
+}
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #1976d2;
+  font-weight: 600;
+}
+.history-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #eaf0fa;
+}
+.history-item:last-child {
+  border-bottom: none;
+}
+.index {
+  font-weight: 500;
+}
+.winner {
+  min-width: 76px;
+  text-align: left;
+  font-weight: 500;
+}
+.winner .x {
+  color: #1976d2;
+}
+.winner .o {
+  color: #ff5252;
+}
+.winner .draw {
+  color: #6d6d7b;
+}
+.moves {
+  opacity: 0.73;
+  font-size: 0.95rem;
+}
+.timestamp {
+  font-size: 0.83rem;
+  opacity: 0.6;
+}
+.empty-history {
+  font-size: 1rem;
+  color: #aaa;
+  font-style: italic;
+}

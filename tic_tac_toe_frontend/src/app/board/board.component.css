@@ -1,0 +1,47 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+.cell {
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border: 2px solid #1976d2;
+  border-radius: 8px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #1976d2;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 3px rgba(25, 118, 210, 0.05);
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cell-x {
+  color: #1976d2;
+}
+.cell-o {
+  color: #ff5252;
+}
+.cell:disabled {
+  background: #f5f6fa;
+  cursor: not-allowed;
+  color: #c0c0c0;
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  .cell {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+}

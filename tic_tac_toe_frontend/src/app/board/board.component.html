@@ -1,0 +1,20 @@
+<div class="board" role="grid">
+  <div
+    *ngFor="let row of board; let rowIndex = index"
+    class="row"
+    role="row"
+  >
+    <button
+      *ngFor="let cell of row; let colIndex = index"
+      class="cell"
+      [ngClass]="getCellClass(cell)"
+      (click)="onClick(rowIndex, colIndex)"
+      [attr.data-coords]="rowIndex + ',' + colIndex"
+      [disabled]="!!cell || disabled"
+      role="gridcell"
+      attr.aria-label="{{ cell ? (cell === 'X' ? 'X' : 'O') : 'Empty' }}"
+    >
+      <span>{{ cell ? cell : '' }}</span>
+    </button>
+  </div>
+</div>

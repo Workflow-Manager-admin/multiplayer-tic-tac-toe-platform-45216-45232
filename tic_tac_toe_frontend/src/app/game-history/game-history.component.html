@@ -1,0 +1,28 @@
+<div class="history-container">
+  <h2>Game History</h2>
+  <div *ngIf="!history.length" class="empty-history">No past games.</div>
+  <ul class="history-list" *ngIf="history.length">
+    <li *ngFor="let game of history; let i = index" class="history-item">
+      <span class="index">{{ history.length - i }}.</span>
+      <span class="winner"
+        >Winner:
+        <span
+          [ngClass]="{
+            'x': game.winner === 'X',
+            'o': game.winner === 'O',
+            'draw': game.winner === 'Draw'
+          }"
+          >{{
+            game.winner && game.winner !== 'Draw'
+              ? game.winner
+              : (game.winner === 'Draw' ? 'Draw' : 'N/A')
+          }}</span
+        ></span
+      >
+      <span class="moves">{{ game.moves.length }} moves</span>
+      <span class="timestamp">{{
+        game.timestamp | date : 'short'
+      }}</span>
+    </li>
+  </ul>
+</div>

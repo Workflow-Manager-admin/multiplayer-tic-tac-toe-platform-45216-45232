@@ -1,16 +1,120 @@
 .container {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #ffffff;
+  align-items: flex-start;
+  background: #fff;
 }
 
-h1 {
+.game-panel {
+  margin: 2.5rem auto 1.5rem auto;
+  padding: 2.2rem 2rem 2rem 2rem;
+  background: #fff;
+  border-radius: 20px;
+  min-width: 310px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 2px 14px rgba(25, 118, 210, 0.05), 0 1.5px 8px rgba(60, 60, 90, 0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-title {
   color: #1976d2;
-  font-size: 3rem;
-  font-weight: 500;
-  margin: 0;
-  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin-bottom: 1.4rem;
+  text-align: center;
+}
+.controls,
+.bottom-controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.action-button {
+  border: none;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #e4e9f3;
+  color: #1976d2;
+  margin: 0 0.6rem;
+  box-shadow: 0 1.5px 4px rgba(25, 118, 210, 0.08);
+  transition: background 0.14s, color 0.12s;
+}
+
+.action-button.primary {
+  background: #1976d2;
+  color: #fff;
+}
+
+.action-button.accent,
+.action-button.accent:disabled {
+  background-color: #ff5252;
+  color: #fff;
+}
+
+.action-button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.39;
+}
+
+.player-info {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+.player-info span {
+  font-size: 1.09rem;
+  font-weight: 600;
+  color: #6e7aad;
+  opacity: 0.75;
+  padding: 0.1rem 0.4rem;
+  border-radius: 5px;
+  transition: background 0.185s, color 0.13s;
+}
+.player-info span.active {
+  color: #1976d2;
+  background: #e8f1fd;
+  opacity: 1;
+}
+
+.status-message {
+  font-size: 1.12rem;
+  font-weight: 500;
+  margin: 0.7rem 0 0.6rem 0;
+  text-align: center;
+  color: #1976d2;
+  min-height: 1.25rem;
+}
+.status-message.has-winner {
+  color: #ff5252;
+}
+
+.board-centerer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+}
+
+@media (max-width: 600px) {
+  .game-panel {
+    max-width: 99vw;
+    padding: 1rem 0.2rem;
+  }
+  .main-title {
+    font-size: 1.39rem;
+  }
+  .action-button {
+    padding: 0.38rem 0.6rem;
+    font-size: 0.98rem;
+  }
 }
